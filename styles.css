@@ -1,0 +1,130 @@
+body, p, img {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #f2f2f2;
+}
+
+button {
+    cursor: pointer;
+}
+
+:root {
+    --blue: #2f80ed;
+}
+
+.hidden {
+    display: none;
+    transition: all 1s;
+}
+
+.dark {
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.login-guide {
+    margin: 200px auto;
+    width: 500px;
+    height: 240px;
+    padding: 30px;
+    box-sizing: border-box;
+    background-color: #ffffff;
+    border: 1px solid #c4c4c4;
+    border-radius: 5px;
+}
+
+.logo {
+    margin: 0 auto;
+    width: 138px;
+    height: 40px;
+}
+
+.title {
+    font-size: 16px;
+    padding: 28px;
+    text-align: center;
+}
+
+.login {
+    width: 100%;
+    background-color: var(--blue);
+    border: none;
+    font-size: 22px;
+    font-weight: 700;
+    padding: 14px;
+    border-radius: 5px;
+    color: #ffffff;
+}
+
+.login-form {
+    background-color: #ffffff;
+    box-sizing: border-box;
+    width: 520px;
+    height: auto;
+    padding: 0 24px;
+    position: absolute;
+    left: 50%;
+    top: 10%;
+    transform: translate(-50%);
+    border: 1px solid #c4c4c4;
+    border-radius: 10px;
+}
+
+.form-title {
+    text-align: center;
+    position: relative;
+    padding: 20px 0;
+    border-bottom: 1px solid #c4c4c4;
+}
+
+.form-title span {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.form-title img {
+    position: absolute;
+    right: 0;
+    width: 16px;
+    cursor: pointer;
+}
+
+.form-content {
+    line-height: 24px;
+    font-weight: 500;
+}
+
+.content-title {
+    padding: 24px 0;
+}
+
+.form-content input {
+    box-sizing: border-box;
+    display: block;
+    width: 100%;
+    padding: 14px 16px;
+    margin: 5px 0;
+    border-radius: 5px;
+    border: 1px solid #c4c4c4;
+}
+
+.login-condition {
+    color: #767676;
+    padding: 17px 0;
+}
+
+.login-condition img {
+    vertical-align: top;
+}
+
+.content-login {
+    background-color: var(--blue);
+    color: #ffffff;
+    width: 100%;
+    border-radius: 5px;
+    font-size: 18px;
+    padding: 10px 0;
+    border: none;
+}
