@@ -127,6 +127,12 @@ button {
     border: 1px solid #c4c4c4;
 }
 
+.warning {
+    font-size: 14px;
+    color: #f4492e;
+    padding: 6px 4px 10px;
+}
+
 .login-condition {
     padding: 0 4px;
     line-height: 20px;
@@ -135,6 +141,7 @@ button {
 
 .login-condition img {
     vertical-align: top;
+    cursor: pointer;
 }
 
 .content-login {

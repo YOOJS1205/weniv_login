@@ -6,6 +6,10 @@
   <img src="https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=CSS3&logoColor=white"/></a>&nbsp;
   <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=JavaScript&logoColor=white"/></a>&nbsp;
 
+- ## 사이트 주소
+
+  https://yoojs1205.github.io/weniv_login/
+
 - ## 0411 (월)
 
   - 진행 상황
@@ -103,4 +107,55 @@
     <img src="images/개발일지/0413(2).png" width="600">
     </div><br>
     => 해당 요소를 가상 요소를 이용하여 구현하였다. 콘텐츠 사이에 margin을 주어야하는 상황인데, before, after **요소의 너비를 각각 50%를 주면 될것으로 생각**되었으나, 너비가 너무 넓어져 줄바꿈이 발생하였다.<br>
-    => 현재는 margin을 부여하고 너비를 눈으로 보기에 맞도록 대충 설정해놓은 상태이다.
+    => 현재는 margin을 부여하고 너비를 눈으로 보기에 맞도록 대충 설정해놓은 상태이다.<br><br>
+
+- ## 0414 (목)
+
+  - 진행 상황
+
+    1. 로그인 상태 유지 클릭 시 색 변경하는 기능 구현<br>
+       => 클릭 시 해당 요소의 src를 바꾸는 이벤트리스너를 통하여 구현
+
+    ```javascript
+    const Condition = document.querySelector(".login-condition");
+    // 이벤트리스너
+    Condition.addEventListener("click", (e) => {
+      // 검은색의 이미지일때 클릭하면 푸른색 이미지로
+      if (e.target.src === "http://127.0.0.1:5500/images/check-box.png") {
+        e.target.setAttribute("src", "images/checked-box.png");
+      }
+      // 이외에는 다시 검은색 이미지로
+      else {
+        e.target.setAttribute("src", "images/check-box.png");
+      }
+    });
+    ```
+
+    <div align="center">
+    <img src="images/개발일지/0414.png" width="600">
+    </div><br>
+
+    2. 아이디 입력창에 아무 값을 입력하지 않고 로그인 버튼을 누르면 경고창이 뜨고, 아이디 입력창의 border 색이 변경되는 기능 구현<br>
+       => 아이디값을 이벤트리스너의 e.target.value로 지정하고, 값이 빈 값인 상태로 로그인 버튼이 눌릴 때 기능이 실행되도록 구현.
+
+    ```javascript
+    var idValue = "";
+    const Id = document.querySelector(".id");
+    const Login = document.queSelector(".content-login");
+    // 이벤트리스너
+    Id.addEventListener("change", (e) => {
+      idValue = e.target.value;
+    });
+    Login.addEventListener("click", (e) => {
+      const Warning = '<p class="warning">아이디를 입력해 주세요.</p>';
+      if (idValue === "") {
+        e.preventDefault();
+        Id.style.borderColor = "#f4492e";
+        Id.insertAdjacentHTML("afterend", Warning);
+      }
+    });
+    ```
+
+    <div align="center">
+    <img src="images/개발일지/0414(2).png" width="600">
+    </div><br>
