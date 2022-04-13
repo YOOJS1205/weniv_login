@@ -1,10 +1,15 @@
-body, p, img {
+body, p, img, a {
     margin: 0;
     padding: 0;
 }
 
+a {
+    text-decoration: none;
+}
+
 body {
     background-color: #f2f2f2;
+    color: #767676;
 }
 
 button {
@@ -13,6 +18,12 @@ button {
 
 :root {
     --blue: #2f80ed;
+}
+
+.clear-fix::after {
+    content: '';
+    display: block;
+    clear: both;
 }
 
 .hidden {
@@ -25,7 +36,10 @@ button {
 }
 
 .login-guide {
-    margin: 200px auto;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
     width: 500px;
     height: 240px;
     padding: 30px;
@@ -43,8 +57,8 @@ button {
 
 .title {
     font-size: 16px;
-    padding: 28px;
     text-align: center;
+    margin: 28px 0 32px;
 }
 
 .login {
@@ -52,8 +66,9 @@ button {
     background-color: var(--blue);
     border: none;
     font-size: 22px;
+    line-height: 28px;
     font-weight: 700;
-    padding: 14px;
+    padding: 17px 0 15px;
     border-radius: 5px;
     color: #ffffff;
 }
@@ -63,19 +78,21 @@ button {
     box-sizing: border-box;
     width: 520px;
     height: auto;
-    padding: 0 24px;
     position: absolute;
     left: 50%;
-    top: 10%;
-    transform: translate(-50%);
+    top: 50%;
+    transform: translate(-50%, -50%);
     border: 1px solid #c4c4c4;
     border-radius: 10px;
 }
 
 .form-title {
+    position: relative;
+    box-sizing: border-box;
+    line-height: 20px;
     text-align: center;
     position: relative;
-    padding: 20px 0;
+    padding: 20px 24px 17px;
     border-bottom: 1px solid #c4c4c4;
 }
 
@@ -86,24 +103,24 @@ button {
 
 .form-title img {
     position: absolute;
-    right: 0;
+    right: 24px;
     width: 16px;
     cursor: pointer;
 }
 
 .form-content {
-    line-height: 24px;
-    font-weight: 500;
+    padding: 25px 23px 24px;
 }
 
 .content-title {
-    padding: 24px 0;
+    margin-bottom: 19px;
 }
 
 .form-content input {
-    box-sizing: border-box;
     display: block;
+    box-sizing: border-box;
     width: 100%;
+    line-height: 20px;
     padding: 14px 16px;
     margin: 5px 0;
     border-radius: 5px;
@@ -111,8 +128,9 @@ button {
 }
 
 .login-condition {
-    color: #767676;
-    padding: 17px 0;
+    padding: 0 4px;
+    line-height: 20px;
+    margin: 16px 0 20px;
 }
 
 .login-condition img {
@@ -125,6 +143,91 @@ button {
     width: 100%;
     border-radius: 5px;
     font-size: 18px;
-    padding: 10px 0;
+    font-weight: 700;
+    line-height: 22px;
+    padding: 14px 0;
+    margin-bottom: 20px;
     border: none;
+}
+
+.functions {
+    font-size: 14px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.functions a {
+    color: #767676;
+}
+
+.find {
+    margin-left: -6px;
+}
+
+.signup::after {
+    content: '';
+    display: inline-block;
+    width: 4px;
+    height: 18px;
+    margin: 0 12px;
+    background-color: #767676;
+    vertical-align: -3px;
+}
+
+.or {
+    font-size: 14px;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.or::before,
+.or::after {
+    content: '';
+    display: inline-block;
+    height: 1px;
+    width: 207px;
+    background-color: #c4c4c4;
+    vertical-align: middle;
+}
+
+.or::before {
+    margin-right: 13px;
+}
+
+.or::after {
+    margin-left: 13px;
+}
+
+.social a {
+    box-sizing: border-box;
+    position: relative;
+    margin: 5px 0;
+    padding: 15px 0;
+    border-radius: 5px;
+    display: block;
+    line-height: 20px;
+    color: #767676;
+    text-align: center;
+}
+
+.social img {
+    position: absolute;
+    left: 12px;
+    top: 11px;
+}
+
+.google {
+    border: 1px solid #767676;
+}
+
+.facebook {
+    border: 1px solid #2d9cdb;
+}
+
+.naver {
+    border: 1px solid #00bf18;
+}
+
+.kakao {
+    border: 1px solid #f2c94c;
 }

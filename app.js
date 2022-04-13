@@ -3,6 +3,7 @@ const StartForm = document.querySelector('.login-guide');
 const LoginButton = document.querySelector('.login');
 const LoginForm = document.querySelector('.login-form');
 const CloseButton = document.querySelector('.form-title img');
+const Condition = document.querySelector('.login-condition');
 
 LoginButton.addEventListener('click', () => {
     LoginForm.classList.remove('hidden');
