@@ -90,7 +90,7 @@
   2. padding이 양옆으로 들어간 요소에 padding을 무시하고 border 삽입하기<br>
      => 추후 해결 예정
 
-- ## 0413 (수)
+- ## 0412 (화)
 
   - 진행 상황
 
@@ -109,7 +109,7 @@
     => 해당 요소를 가상 요소를 이용하여 구현하였다. 콘텐츠 사이에 margin을 주어야하는 상황인데, before, after **요소의 너비를 각각 50%를 주면 될것으로 생각**되었으나, 너비가 너무 넓어져 줄바꿈이 발생하였다.<br>
     => 현재는 margin을 부여하고 너비를 눈으로 보기에 맞도록 대충 설정해놓은 상태이다.<br><br>
 
-- ## 0414 (목)
+- ## 0413 (수)
 
   - 진행 상황
 
@@ -159,3 +159,56 @@
     <div align="center">
     <img src="images/개발일지/0414(2).png" width="600">
     </div><br>
+
+  - ## 0414 (목)
+
+    - 진행 상황
+
+      1. SelectBox 퍼블리싱<br><br>
+      <div align="center">
+      <img src="images/개발일지/0414(3).png" width="600">
+      </div><br>
+      <div align="center">
+      <img src="images/개발일지/0414(4).png" width="600">
+      </div><br>
+      <div align="center">
+      <img src="images/개발일지/0414(5).png" width="600">
+      </div><br><br>
+
+      2. 기능 구현
+
+      - 이벤트리스너를 사용해서 Select Box를 누르면 select 콘텐츠들이 나오도록 구현
+      - 이벤트리스너를 사용해서 Select Box를 누르면 화살표 모양이 바뀌도록 이용<br>
+      - 이벤트리스너를 사용해서 콘텐츠를 누르면 해당 텍스트가 Select Box에 나타나도록 구현
+
+      ```javascript
+      const SelectBox = document.querySelector(".select");
+      const OptionBox = document.querySelector(".options");
+
+      // e.target => 이벤트가 발생한 요소
+      // e.currentTarget => 이벤트리스너를 호출시킨 요소
+      SelectBox.addEventListener("click", (e) => {
+        // 클릭 시 이미지 변경
+        if (
+          e.currentTarget.childNodes[1].src ==
+          "http://127.0.0.1:5500/images/icon-Triangle-down.png"
+        ) {
+          e.currentTarget.childNodes[1].src =
+            "http://127.0.0.1:5500/images/icon-Triangle-up.png";
+        } else {
+          e.currentTarget.childNodes[1].src =
+            "http://127.0.0.1:5500/images/icon-Triangle-down.png";
+        }
+        // 클릭 시 하위 콘텐츠 보여주기, 가리기
+        OptionBox.classList.toggle("hidden");
+      });
+
+      // 콘텐츠 선택하면 해당 텍스트가 나타나도록 구현
+      OptionBox.addEventListener("click", (e) => {
+        SelectBox.innerText = e.target.innerText;
+      });
+      ```
+
+        <div align="center">
+        <img src="images/개발일지/0414(6).png" width="600">
+        </div><br><br>
