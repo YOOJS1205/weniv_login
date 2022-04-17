@@ -212,3 +212,10 @@
         <div align="center">
         <img src="images/개발일지/0414(6).png" width="600">
         </div><br><br>
+
+  - ## 0417 (일)
+    1. 로그인 조건을 만족하고 로그인 버튼을 클릭 시, 드롭박스 페이지로 넘어가도록 구현
+    ```html
+    <!-- select.html로 데이터 전송 -->
+    <form class="login-form hidden clear-fix" action="./select.html"></form>
+    ```
