@@ -3,6 +3,10 @@ body, p, img, a {
     padding: 0;
 }
 
+label {
+    display: none;
+}
+
 a {
     text-decoration: none;
 }
@@ -18,6 +22,12 @@ button {
 
 :root {
     --blue: #2f80ed;
+}
+
+.clear-fix::after {
+    display: block;
+    content: '';
+    clear: both;
 }
 
 .hidden {
@@ -81,8 +91,8 @@ button {
 }
 
 .form-title {
-    position: relative;
     box-sizing: border-box;
+    font-size: 16px;
     line-height: 20px;
     text-align: center;
     position: relative;
@@ -90,13 +100,14 @@ button {
     border-bottom: 1px solid #c4c4c4;
 }
 
-.form-title span {
+.form-title p {
     width: 100%;
     margin: 0 auto;
 }
 
 .form-title img {
-    position: absolute;
+    float: right;
+    margin-top: -18px;
     right: 24px;
     width: 16px;
     cursor: pointer;
@@ -124,7 +135,7 @@ button {
 .warning {
     font-size: 14px;
     color: #f4492e;
-    padding: 0px 4px 10px;
+    padding: 0 4px;
     margin-top: -4px;
 }
 
@@ -169,8 +180,8 @@ button {
 .signup::after {
     content: '';
     display: inline-block;
-    width: 4px;
-    height: 18px;
+    width: 1px;
+    height: 15px;
     margin: 0 12px;
     background-color: #767676;
     vertical-align: -3px;
@@ -187,7 +198,7 @@ button {
     content: '';
     display: inline-block;
     height: 1px;
-    width: 207px;
+    width: calc(50% - 29px);
     background-color: #c4c4c4;
     vertical-align: middle;
 }
@@ -200,22 +211,25 @@ button {
     margin-left: 13px;
 }
 
-.social a {
+.social-link {
     box-sizing: border-box;
-    position: relative;
     margin: 10px 0;
     padding: 15px 0;
     border-radius: 5px;
     display: block;
     line-height: 20px;
     color: #767676;
-    text-align: center;
 }
 
-.social img {
-    position: absolute;
-    left: 12px;
-    top: 11px;
+.social-link img {
+    float: left;
+    margin-top: -23px;
+    margin-left: 13px;
+}
+
+.social-link p {
+    width: 100%;
+    text-align: center;
 }
 
 .google {

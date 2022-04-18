@@ -214,8 +214,56 @@
         </div><br><br>
 
   - ## 0417 (일)
+
     1. 로그인 조건을 만족하고 로그인 버튼을 클릭 시, 드롭박스 페이지로 넘어가도록 구현
+
     ```html
     <!-- select.html로 데이터 전송 -->
     <form class="login-form hidden clear-fix" action="./select.html"></form>
     ```
+
+  - ## 0418 (월)
+
+    - 코드 리뷰
+
+      1. 요소 정렬 시에 **position 속성 사용을 지양**하자. => 전부 float 속성으로 수정
+      2. input 요소는 반드시 label 요소와 함께하자 => **웹 접근성 향상**
+      3. section 태그에는 반드시 최소 1개의 제목 태그가 들어가야 한다.
+
+    - 기능 구현
+      1. 지정된 비밀번호와 다른 비밀번호가 입력되고 로그인 버튼이 클릭되면 에러 메세지 작동
+      2. 현재 입력된 아이디와 비밀번호를 저장하는 변수 사용
+      3. onInput 이벤트를 활용하여 아이디 input에 값이 들어가면 에러 메세지 사라지게 구현
+      ```javascript
+      Id.addEventListener("input", (e) => {
+        IdInput = e.target.value;
+        if (e.target.value.length == 1) {
+          Id.style.borderColor = "black";
+          document.querySelector(".warning").remove();
+        }
+      });
+      Password.addEventListener("input", (e) => {
+        PasswordInput = e.target.value;
+      });
+      Login.addEventListener("click", (e) => {
+        clickLoginNum++;
+        const IdWarning = '<p class="warning">아이디를 입력해 주세요.</p>';
+        const PasswordWarning =
+          '<p class="warning">아이디 혹은 비밀번호와 일치하지 않습니다.</p>';
+        if (IdInput.length == 0 && clickLoginNum == 1) {
+          clickLoginNum = 0;
+          e.preventDefault();
+          Id.style.borderColor = "#f4492e";
+          Id.insertAdjacentHTML("afterend", IdWarning);
+        } else if (IdInput.length == 0) {
+          e.preventDefault();
+        } else if (PasswordInput !== password) {
+          e.preventDefault();
+          Password.style.borderColor = "#f4492e";
+          Password.insertAdjacentHTML("afterend", PasswordWarning);
+        }
+      });
+      ```
+      <div align="center">
+        <img src="images/개발일지/0418.png" width="600">
+      </div><br><br>
