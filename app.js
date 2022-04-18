@@ -25,10 +25,10 @@ CloseButton.addEventListener('click', () => {
 // 클릭 시 체크 이미지 푸른색으로 변경
 Condition.addEventListener('click', e => {
     if (e.target.src === 'http://127.0.0.1:5500/images/check-box.png') {
-        e.target.setAttribute('src', 'http://127.0.0.1:5500/images/checked-box.png');
+        e.target.setAttribute('src', 'images/checked-box.png');
     }
     else {
-        e.target.setAttribute('src', 'http://127.0.0.1:5500/images/check-box.png');
+        e.target.setAttribute('src', '/images/check-box.png');
     }
 })
 
