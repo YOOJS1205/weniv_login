@@ -7,6 +7,7 @@ const CloseButton = document.querySelector('.form-title img');
 const Condition = document.querySelector('.login-condition');
 
 var idValue = '';
+var clickLoginNum = 0;
 const Id = document.querySelector('.id');
 const Login = document.querySelector('.content-login');
 
@@ -37,10 +38,14 @@ Id.addEventListener('change', e => {
     idValue = e.target.value;
 })
 Login.addEventListener('click', e => {
+    clickLoginNum++;
     const Warning = '<p class="warning">아이디를 입력해 주세요.</p>';
-    if (idValue === '') {
+    if (idValue === '' && clickLoginNum == 1) {
         e.preventDefault();
         Id.style.borderColor = '#f4492e';
         Id.insertAdjacentHTML('afterend', Warning);
+    }
+    else if (idValue === '') {
+        e.preventDefault();
     }
 })
