@@ -20,12 +20,6 @@ button {
     --blue: #2f80ed;
 }
 
-.clear-fix::after {
-    content: '';
-    display: block;
-    clear: both;
-}
-
 .hidden {
     display: none;
     transition: all 1s;
