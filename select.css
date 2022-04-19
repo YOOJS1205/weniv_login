@@ -31,7 +31,7 @@ body {
 }
 
 .select:focus {
-    border: 3px solid #f9e4ff;
+    outline: 3px solid #f9e4ff;
 }
 
 .select img {

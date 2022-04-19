@@ -219,31 +219,47 @@ button {
     display: block;
     line-height: 20px;
     color: #767676;
-}
-
-.social-link img {
-    float: left;
-    margin-top: -23px;
-    margin-left: 13px;
-}
-
-.social-link p {
-    width: 100%;
     text-align: center;
+}
+
+.social-link::before {
+    /* 텍스트 중앙정렬 */
+    margin-left: 15px;
+    margin-right: -28px;
+    margin-top: -3px;
+    float: left;
+    display: block;
+    content: '';
+    width: 28px;
+    height: 28px;
+    background-image: url('images/css_sprites4x.png');
+    background-size: 96px 96px;
 }
 
 .google {
     border: 1px solid #767676;
 }
+.google::before {
+    background-position: -58px -58px;
+}
 
 .facebook {
     border: 1px solid #2d9cdb;
+}
+.facebook::before {
+    background-position: -10px -10px;
 }
 
 .naver {
     border: 1px solid #00bf18;
 }
+.naver::before {
+    background-position: -58px -10px;
+}
 
 .kakao {
     border: 1px solid #f2c94c;
+}
+.kakao::before {
+    background-position: -10px -58px;
 }

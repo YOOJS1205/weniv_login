@@ -267,3 +267,63 @@
       <div align="center">
         <img src="images/개발일지/0418.png" width="600">
       </div><br><br>
+
+  - ## 0419 (화)
+
+    1. 드롭박스 클릭시 화살표 모양 변경 기능 구현 방식 변경
+
+       - 기존: 클릭 시 img 태그의 src 속성값을 변경
+       - 변경: 가상 요소에 background-image 속성을 부여하여 기본 세팅을 하고, 드롭박스 클릭을 할 때 클래스를 추가하여 해당 클래스가 들어가면 background-image url을 변경
+
+       ```html
+       <!-- html -->
+       <button class="select">최애 프로그래밍 언어</button>
+       ```
+
+       ```css
+       /* css */
+       .select {
+         background: url("./images/icon-Triangle-down.png") no-repeat;
+         background-position: right 13px center;
+       }
+       /* 클릭 시 이미지 url 변경 */
+       .click {
+         background: url("./images/icon-Triangle-up.png") no-repeat;
+         background-position: right 13px center;
+       }
+       ```
+
+       ```javascript
+       // JavaScript
+       const SelectBox = document.querySelector(".select");
+       const OptionBox = document.querySelector(".options");
+
+       SelectBox.addEventListener("click", () => {
+         SelectBox.classList.toggle("click");
+         OptionBox.classList.toggle("hidden");
+       });
+       ```
+
+    2. float 속성의 요소를 무시하고 텍스트 가운데 정렬하기<br>
+       => float 속성의 요소에 해당 요소의 크기만큼 음의 마진을 주어서 정렬
+
+    ```html
+    <a href="#none" class="google social-link">구글 계정으로 로그인</a>
+    ```
+
+    ```css
+    /* css */
+    .social-link::before {
+      /* 텍스트 중앙정렬 */
+      margin-left: 15px;
+      margin-right: -28px; /* 해당 크기만큼 음의 마진 */
+      float: left;
+      display: block;
+      content: "";
+      width: 28px;
+      height: 28px;
+      background-image: url("images/css_sprites(1).png");
+    }
+    ```
+
+    3. 이미지 스프라이트 기법 이용해서 로고 배치 => 렌더링 시간이 줄어든다.
