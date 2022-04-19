@@ -21,26 +21,13 @@ body {
     padding: 13px 0 13px 14px;
     box-sizing: border-box;
     text-align: left;
-}
-
-.select::after {
-    content: '';
-    display: inline-block;
-    width: 12px;
-    height: 8px;
     background: url('./images/icon-Triangle-down.png') no-repeat;
-    margin-left: 40px;
-    vertical-align: 2px;
+    background-position: right 13px center;
 }
 
-.select.click::after {
-    content: '';
-    display: inline-block;
-    width: 12px;
-    height: 8px;
+.click {
     background: url('./images/icon-Triangle-up.png') no-repeat;
-    margin-left: 40px;
-    vertical-align: 2px;
+    background-position: right 13px center;
 }
 
 .select:focus {
