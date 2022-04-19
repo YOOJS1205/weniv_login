@@ -3,7 +3,7 @@ const OptionBox = document.querySelector('.options');
 
 // e.target vs e.currentTarget 정리
 SelectBox.addEventListener('click', (e) => {
-    if (e.currentTarget.childNodes[1].src == './images/icon-Triangle-down.png') {
+    if (e.currentTarget.childNodes[1].src == 'https://yoojs1205.github.io/weniv_login/images/icon-Triangle-down.png') {
         e.currentTarget.childNodes[1].src = './images/icon-Triangle-up.png';
     }
     else {
